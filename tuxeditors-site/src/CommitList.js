@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './CommitList.css';
-import { Well } from 'react-bootstrap';
+import { Alert, Button, Well } from 'react-bootstrap';
 
 const monthNames = [
   'January', 'February', 'March',
@@ -35,6 +35,9 @@ class CommitList extends Component {
     this.state = {
       loadingCommits: false,
       commitList: [],
+      rateLimitError: false,
+      showWarning: false,
+      errorInfo: {}
     }
   }
   
@@ -75,40 +78,92 @@ class CommitList extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://api.github.com/repos/ALazenka/tuxeditors-site/commits').then((response) => {
-      let counter = 0;
-      const commitList = [];
-      response.data.forEach(commit => {
-        if (counter < 5) {
-          commitList.push(commit);
-          counter++;
-        }
-      })
-      this.setState({
-        commitList
+    new Promise((resolve, reject) => {
+      axios.get('https://api.github.com/repos/ALazenka/tuxeditors-site/commits').then((response) => {
+        let counter = 0;
+        const commitList = [];
+        response.data.forEach(commit => {
+          if (counter < 5) {
+            commitList.push(commit);
+            counter++;
+          }
+        })
+        this.setState({
+          commitList
+        });
+        resolve(response);
+      }).catch((error) => {
+        if (error.response.status === 403 && error.response.data.documentation_url === 'https://developer.github.com/v3/#rate-limiting') {
+          this.setState({
+            rateLimitError: true,
+            showWarning: true
+          });
+          this._checkResetTime();
+        };
+        reject(error);
       });
-    })
+    });
+  }
+
+  _toggleAlert() {
+    this.setState({
+      showWarning: !this.state.showWarning
+    });
+  }
+
+  _checkResetTime() {
+    new Promise((resolve, reject) => {
+      axios.get('https://api.github.com/rate_limit').then((response) => {
+        this.setState({
+          errorInfo: response.data
+        });
+        resolve(response);
+      });
+    });
   }
 
   _renderCommitList() {
-    return this.state.commitList.map((commit, i) => {
+    if (!this.state.showWarning) {
+      return this.state.commitList.map((commit, i) => {
+        return (
+          <li className='commit' key={i}>
+            <Well className='commitContents'>
+              <h4>{ commit.commit.message }</h4>
+              <div>Author: { commit.author.login }</div>
+              <div>Published: { this._friendlyDate(commit.commit.author.date)}</div>
+              <a href={commit.html_url}>View Changed Files</a>
+            </Well>
+          </li>
+        )
+      })
+    } else {
       return (
-        <li className='commit' key={i}>
-          <Well className='commitContents'>
-            <h4>{ commit.commit.message }</h4>
-            <div>Author: { commit.author.login }</div>
-            <div>Published: { this._friendlyDate(commit.commit.author.date)}</div>
-            <a href={commit.html_url}>View Changed Files</a>
-          </Well>
-        </li>
-      )
-    })
+        <div>Currently Not Available</div>
+      );
+    }
+  }
+
+  _renderWarning() {
+    const { rateLimitError, showWarning, errorInfo } = this.state;
+    const resetTime = errorInfo.resources ? new Date(errorInfo.resources.core.reset * 1000).toString() : null;
+    if (rateLimitError && showWarning) {
+      return (
+        <Alert bsStyle="danger">
+          <h4>GitHub API rate limit exceeded!</h4>
+          <p>Our site has been contacting GitHub a lot.</p>
+          <p>Reset time: { resetTime }</p>
+          <p>
+            <Button onClick={() => this._toggleAlert()}>Hide</Button>
+          </p>
+        </Alert>
+      );
+    }
   }
 
   render() {
-    console.log(this.state.commitList);
     return (
       <div className="commitList">
+        { this._renderWarning() }
         <h3>Most Recent Commits</h3>
         <div>
           { this._renderCommitList() }
