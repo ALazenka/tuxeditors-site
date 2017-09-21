@@ -1,0 +1,10 @@
+<h1>Tuxeditors - Welcome</h1>
+<p>
+  <% @commit_list.each do |commit| %>
+    <div><%= commit['commit']['message'] %></div>
+    <div>Project modified by: <%= commit['author']['login'] %></div>
+    <div>Changes made on: <span class="timestring"><%= Time.zone.parse(commit['commit']['author']['date'].sub('T', ' ')).localtime %><span></div>
+    <div><a href="<%= commit['html_url'] %>">See changed files</a></div>
+    <br />
+  <% end %>
+</p>
