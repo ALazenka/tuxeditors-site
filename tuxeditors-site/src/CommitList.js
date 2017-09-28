@@ -129,7 +129,7 @@ class CommitList extends Component {
           <li className='commit' key={i}>
             <Well className='commitContents'>
               <h4>{ commit.commit.message }</h4>
-              <div>Author: { commit.author.login }</div>
+              <div>Author: { commit.commit.author.login }</div>
               <div>Published: { this._friendlyDate(commit.commit.author.date)}</div>
               <a href={commit.html_url}>View Changed Files</a>
             </Well>
