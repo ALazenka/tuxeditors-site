@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
-import CommitList from './CommitList';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Tuxeditors Site</h2>
-        </div>
-        <CommitList />
-      </div>
-    );
-  }
-}
+import HomePage from './HomePage';
+
+const App = () => (
+    <MuiThemeProvider>
+        <HomePage />
+    </MuiThemeProvider>
+);
+
 
 export default App;

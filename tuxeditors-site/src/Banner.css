@@ -1,0 +1,26 @@
+#banner {
+    background-color: rgb(0, 188, 212);
+    color: white;
+    padding: 20px 50px
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 100px;
+}
+
+h2 {
+    font-size: 18px;
+    margin: auto;
+    max-width: 600px;
+
+}
+
+#action-buttons {
+    display: flex;
+    margin: 15px;
+}
+#action-buttons > div {
+   margin: auto;
+}
