@@ -1,0 +1,30 @@
+.sa-logo:not(:root) {
+    overflow: visible
+}
+
+.sa-logo {
+    height: auto;
+    max-width: 100%;
+    width: 224px;
+}
+
+#banner-logo {
+    display: flex;
+    height: 240px;
+    margin-top: -40px;
+}
+#banner-logo > * {
+    margin: auto;
+}
+
+.sa-logo .st1 {
+    fill: black;
+    opacity: 1;
+}
+.sa-logo .st1.buttons, .sa-logo .st1.bowtie {
+    fill: white;
+}
+
+.no-js .sa-logo .st1 {
+    opacity: 1;
+}
