@@ -164,7 +164,9 @@ class CommitList extends Component {
     return (
       <div className="commitList">
         { this._renderWarning() }
-        <h3>Most Recent Commits</h3>
+        <center>
+          <h3>Most Recent Commits</h3>
+        </center>
         <div>
           { this._renderCommitList() }
         </div>

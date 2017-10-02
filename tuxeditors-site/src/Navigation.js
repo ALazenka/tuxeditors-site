@@ -15,7 +15,7 @@ const Navigation = () => (
         <Navbar.Collapse>
             <Nav>
                 <MenuItem eventKey={1} href="#discussions">Weekly Discussions</MenuItem>
-                <MenuItem eventKey={2} href="#code">Source Code</MenuItem>
+                <MenuItem eventKey={2} href="http://www.github.com/ALazenka/tuxeditors-site">Source Code</MenuItem>
                 <NavDropdown eventKey={3} title="Architecture" id="basic-nav-dropdown">
                     <MenuItem eventKey={3.1} href="#conceptual">Conceptual</MenuItem>
                     <MenuItem eventKey={3.2} href="#concrete">Concrete</MenuItem>

@@ -21,7 +21,7 @@ const HomePage = () => (
         <h3 id="concrete">Concrete Architecture</h3>
         <p>Coming soon!</p>
         <h3 id="contact">Contact Us</h3>
-        <p>Andrew Lazenka</p>
+        <p>Andrew Lazenka (10176676 / 14ajl3@queensu.ca)</p>
         <p>Hyun Heo (10073578 / 12hh13@queensu.ca)</p>
         <p>Renée Rosario</p>
         <p>Rory Bell</p>
