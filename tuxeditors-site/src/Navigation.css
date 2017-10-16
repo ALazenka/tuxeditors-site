@@ -42,6 +42,14 @@
     border-color: #00a0b5;
 }
 
+.navbar-inverse .navbar-nav>.active>a {
+    background-color: #00bcd4;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    background-color: #00bcd4;
+}
+
 .navbar-brand {
     background: #00bcd4;
     margin-top: 15px;
