@@ -18,6 +18,19 @@ class Discussions extends Component {
         <p>Practiced presentation and gave each other feedback.</p>
         <h4>Meeting #6 - October 22:</h4>
         <p>Congregated inidividual report sections, and proofread each others’ work.</p>
+        <h4>Meeting #7 - October 27:</h4>
+        <p>
+          A couple group members got the Understand software running on their machines, were able to access the SuperTux source code.
+          Started to look into moving folders and files to fit into our conceptual subsystems.
+        </p>
+        <h4>Meeting #8 - October 31:</h4>
+        <p>Met to finish placing folders and files into subsystems. Collected a few questions and concerns to address with our TA.</p>
+        <h4>Meeting #9 - November 3:</h4>
+        <p>
+          Consulted our TA with our questions. Later on in the day, we reconvened to discuss presentation requirements and split up
+          resposibilities for the upcoming report.
+        </p>
+
       </center>
     );
   }
