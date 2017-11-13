@@ -30,6 +30,10 @@ class Discussions extends Component {
           Consulted our TA with our questions. Later on in the day, we reconvened to discuss presentation requirements and split up
           resposibilities for the upcoming report.
         </p>
+		<h4>Meeting #10 - November 10:</h4>
+        <p>Discussed who would work on what parts for the report Resolved any issues that teammates had issues with.</p>
+		<h4>Meeting #11 - November 12:</h4>
+        <p>Consolidated work, and addressed any issues together before hand-in.</p>
 
       </center>
     );

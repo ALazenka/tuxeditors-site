@@ -5,7 +5,7 @@ class ConceptualArchitecture extends Component {
     return (
       <center>
         <h3>Concrete Architecture</h3>
-        <h5><a href="https://docs.google.com/presentation/d/1IqXnMQVmi8eISiBTxTz3PSmWAz_VnjJoLcP6F3J7w2c/edit?usp=sharing">Presentation Slides</a> | Report Coming Soon</h5>
+        <h5><a href="https://docs.google.com/presentation/d/1IqXnMQVmi8eISiBTxTz3PSmWAz_VnjJoLcP6F3J7w2c/edit?usp=sharing">Presentation Slides</a> | <a href="https://docs.google.com/document/d/1K20NwA5ii6SSBc2-YP7lg4erY2LGc5cq9Hccr17F0oQ/edit">Report</a></h5>
         <iframe 
           title="TuxeditorsConceptualArchitecture"
           src="https://docs.google.com/presentation/d/e/2PACX-1vRmboyGCpKeE_N6ZS1VwGce4hcqEyGAvHVakurKE5U0g9FMCyouitkRa5CKkS8VmjdaswVBTt5rA6-1/embed?start=false&loop=false&delayms=3000"
