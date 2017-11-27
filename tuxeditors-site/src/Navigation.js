@@ -18,11 +18,12 @@ class Navigation extends Component {
               <Nav>
                 <LinkContainer exact to="/"><MenuItem eventKey={1}>Home</MenuItem></LinkContainer>
                 <LinkContainer to="/discussions"><MenuItem eventKey={2}>Weekly Discussions</MenuItem></LinkContainer>
-                <MenuItem eventKey={3} href="http://www.github.com/ALazenka/tuxeditors-site">Source Code</MenuItem>
-                <NavDropdown eventKey={4} title="Architecture" id="basic-nav-dropdown">
+                <MenuItem href="http://www.github.com/ALazenka/tuxeditors-site">Source Code</MenuItem>
+                <NavDropdown title="Architecture" id="basic-nav-dropdown">
                     <LinkContainer to="/conceptual"><MenuItem eventKey={4.1}>Conceptual</MenuItem></LinkContainer>
                     <LinkContainer to="/concrete"><MenuItem eventKey={4.2}>Concrete</MenuItem></LinkContainer>
                 </NavDropdown>
+                <LinkContainer to="/proposed"><MenuItem eventKey={2}>Proposed Feature</MenuItem></LinkContainer>
               </Nav>
           </Navbar.Collapse>
       </Navbar>

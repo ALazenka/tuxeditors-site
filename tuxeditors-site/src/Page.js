@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Well } from 'react-bootstrap';
 import {
     Switch,
-    Route,
-    Link
+    Route
   } from 'react-router-dom';
 
 import Banner from './Banner';
@@ -13,6 +11,7 @@ import CommitList from './CommitList';
 import ConceptualArchitecture from './ConceptualArchitecture';
 import ConcreteArchitecture from './ConcreteArchitecture';
 import Discussions from './Discussions';
+import Proposed from './Proposed';
 
 class Page extends Component {
     render() {
@@ -25,6 +24,7 @@ class Page extends Component {
                     <Route path='/conceptual' component={ConceptualArchitecture} />
                     <Route path='/concrete' component={ConcreteArchitecture} />
                     <Route path='/discussions' component={Discussions} />
+                    <Route path='/proposed' component={Proposed} />
                 </Switch>
                 <Contact />
             </main>
