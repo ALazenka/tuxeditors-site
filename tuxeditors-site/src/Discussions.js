@@ -35,6 +35,10 @@ class Discussions extends Component {
         <p>Consolidated work, and addressed any issues together before hand-in.</p>
         <h4>Meeting #12 - November 22nd:</h4>
         <p>Expanded thoughts and ideas for proposed feature, divided tasks for upcoming presentation and report.</p>
+        <h4>Meeting #13 - November 26th:</h4>
+        <p>Coordinated group members parts for the presentation slides, assembled presentation together as a group.</p>
+        <h4>Meeting #14 - November 30th:</h4>
+        <p>Met as a group to prepare presentation notes and ensure all requirements were covered in presentation.</p>
       </center>
     );
   }
